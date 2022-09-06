@@ -1,0 +1,31 @@
+.profile-card{
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 1px 1px 8px 0 grey;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 20px 0 20px 50px;
+
+    table {
+        border: none;
+        font-size: 16px;
+        height: 270px;
+        width: 80%;
+    }
+    .edit {
+        position: relative;
+        color: black;
+        right: 14%;
+    }
+    .button_container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+        button {
+            margin: 1rem;
+        }
+    }
+}
+
+

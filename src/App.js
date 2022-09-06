@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import ProfilePage from "./pages/ProfilePage";
+import SignUpPage from "./pages/SignUpPage";
+import LoginPage from "./pages/LoginPage";
+import { Fragment, useContext } from "react";
+import { UserContext } from "./hooks/user.context";
 
 function App() {
+  const { createUser } = useContext(UserContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {createUser ? (
+          <Route path="/" element={<Header />}>
+            <Route index element={<HomePage />} />
+            <Route path="profile" element={<ProfilePage />} />
+          </Route>
+        ) : (
+          <Fragment>
+            <Route path="/" element={<LoginPage />} />
+            {/* <Route path="sign-up" element={<SignUpPage />} /> */}
+          </Fragment>
+        )}
+      </Routes>
+    </Router>
   );
 }
 
