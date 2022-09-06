@@ -1,7 +1,7 @@
 # Internship Programming Test Lion Circuits
 
 DEPLOY URL :
-https://vercel.com/sahariprasad-2907/lion-circuits-internship-assignment
+https://lion-circuits-internship-assignment.vercel.app/
 
 ## STEP 1
 
